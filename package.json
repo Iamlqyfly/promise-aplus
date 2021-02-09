@@ -4,7 +4,9 @@
   "description": "promise-aplus",
   "main": "all.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "promises-aplus-tests test",
+    "git": "git pull && git add . && git commit -m ",
+    "postgit": "git push"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Iamlqyfly/promise-aplus/issues"
   },
-  "homepage": "https://github.com/Iamlqyfly/promise-aplus#readme"
+  "homepage": "https://github.com/Iamlqyfly/promise-aplus#readme",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
 }
