@@ -31,9 +31,9 @@ const handleCallBack = (handler, state, result) => {
 	}
 }
 
+// 当状态变更时，异步清空所有 callbacks
 const handleCallBacks = delay(promise => {
 	let { callbacks, state, result } = promise
-	// 2.3.4 清空之前的内容
 	while (callbacks.length) handleCallBack(callbacks.shift(), state, result)
 })
 
@@ -57,7 +57,6 @@ const resolvePromise = (promise, value, onFulfilled, onRejected) => {
 	if (value instanceof Promise) {
 		return value.then(onFulfilled, onRejected)
 	}
-
   // 2.6.3 如果 result 是一个 thenable 对象。
   // 先去 then 函数，再 call then 函数，重新进入 The Promise resolution procedure 过程
 	if (isThenable(value)) {

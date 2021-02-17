@@ -4,12 +4,6 @@ const formateSettleResult = (success, value) => {
   return success ? { status: 'fulfilled', value } : { status: 'rejected', reason: value }
 }
 
-const commonSettleRes = function(settleList, index, settleNum, len, key, value) {
-  settleList[index] = formateSettleResult(key, value)
-  if (++settleNum === len) {
-    resolve(settleList)
-  }
-}
 Promise.allSettled = function(iterators) {
   const promises = Array.from(iterators);
   const len = promises.length;
