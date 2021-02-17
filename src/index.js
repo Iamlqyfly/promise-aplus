@@ -11,7 +11,6 @@ const isPromise = promise => promise instanceof Promise
     * fulfilled：不能迁移到其他状态，必须有个不可变的 value
     * rejected：不能迁移到其他状态，必须有个不可变的 reason
 */
-
 const PENDING = Symbol('pending')
 const FULFILLED = Symbol('fulfilled')
 const REJECTED = Symbol('rejected')

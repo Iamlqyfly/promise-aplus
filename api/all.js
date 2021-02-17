@@ -15,6 +15,7 @@ Promise.all = function(promises) {
     }
   })
 }
+
 const p1 = new Promise((resolve, reject) => {
   resolve('hello');
 })
